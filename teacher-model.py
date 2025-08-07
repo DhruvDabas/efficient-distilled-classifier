@@ -156,7 +156,18 @@ def train():
     
 
 #  training
+# if __name__ == '__main__':
+#     import multiprocessing
+#     multiprocessing.freeze_support()
+#     # train()
+#     test()
+
 if __name__ == '__main__':
     import multiprocessing
     multiprocessing.freeze_support()
-    train()
+    
+    model.load_state_dict(torch.load('best_model.pth')['model_state_dict'])
+    model.eval()
+    
+    test()
+    
