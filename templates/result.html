@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="../static/uploads/css/result.css">
+</head>
+<body>
+
+<h1>Prediction Result</h1>
+<div class="card">
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+    <p class="prediction">Predicted Class: {{ prediction }}</p>
+    <a href="/" class="back-btn">Try Another Image</a>
+</div>
+
+</body>
+</html>

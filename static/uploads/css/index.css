@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 50px;
+}
+h1 {
+    color: #333;
+}
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    background: white;
+    max-width: 400px;
+    margin: auto;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+.drop-zone.dragover {
+    border-color: #007BFF;
+}
+.drop-zone input {
+    display: none;
+}
+.drop-zone p {
+    color: #666;
+}
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background: #0056b3;
+}

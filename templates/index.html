@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Student Model Prediction</title>
+    <link rel="stylesheet" href="../static/uploads/css/index.css">
+</head>
+<body>
+
+<h1>Upload an Image for Prediction</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="drop-zone" id="drop-zone">
+        <p>Drag & drop an image here or click to select</p>
+        <input type="file" name="file" id="fileInput" accept="image/*">
+    </div>
+    <button type="submit" class="submit-btn">Predict</button>
+</form>
+
+<script>
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("fileInput");
+
+    dropZone.addEventListener("click", () => fileInput.click());
+
+    fileInput.addEventListener("change", () => {
+        if (fileInput.files.length) {
+            dropZone.querySelector("p").textContent = fileInput.files[0].name;
+        }
+    });
+
+    dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropZone.classList.add("dragover");
+    });
+
+    dropZone.addEventListener("dragleave", () => {
+        dropZone.classList.remove("dragover");
+    });
+
+    dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.classList.remove("dragover");
+        fileInput.files = e.dataTransfer.files;
+        if (fileInput.files.length) {
+            dropZone.querySelector("p").textContent = fileInput.files[0].name;
+        }
+    });
+</script>
+
+</body>
+</html>
